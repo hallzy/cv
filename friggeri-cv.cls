@@ -31,6 +31,7 @@
   \colorlet{green}{gray}
   \colorlet{orange}{gray}
   \colorlet{purple}{gray}
+  \colorlet{brown}{gray}
   \colorlet{red}{gray}
   \colorlet{blue}{gray}
   \colorlet{fillheader}{white}
@@ -49,14 +50,14 @@
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
-\newfontfamily\bodyfont[]{Helvetica Neue}
-\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+\newfontfamily\bodyfont[]{Source Sans Pro}
+\newfontfamily\thinfont[]{Source Sans Pro Light}
+\newfontfamily\headingfont[]{Source Sans Pro Bold}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+\setmainfont[Mapping=tex-text, Color=textcolor]{Source Sans Pro Light}
 
-\setmathfont{XITS Math}
+%\setmathfont{XITS Math}
 
 %%%%%%%%%%
 % Header %
@@ -72,7 +73,7 @@
 
 \newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
+    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north) {};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
@@ -101,7 +102,14 @@
         red\or%
         orange\or%
         green\or%
-        purple\else%
+        purple\or%
+        brown\or%
+        blue\or%
+        red\or%
+        orange\or%
+        green\or%
+        purple\or%
+        brown\else%
         headercolor\fi%
     } #1#2#3%
   }%
@@ -130,11 +138,15 @@
 % List environment %
 %%%%%%%%%%%%%%%%%%%%
 
+\RequirePackage{longtable}
+\RequirePackage{tabu}
+
+
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+  \begin{longtabu} to \textwidth {@{\extracolsep{\fill}}ll}
 }{%
-  \end{tabular*}
+  \end{longtabu}
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
@@ -175,6 +187,7 @@
 \RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
 
 \DeclareFieldFormat[article]{title}{#1\par}
+\DeclareFieldFormat[book]{title}{#1\par}
 \DeclareFieldFormat[inproceedings]{title}{#1\par}
 \DeclareFieldFormat[misc]{title}{#1\par}
 \DeclareFieldFormat[report]{title}{#1\par}
@@ -198,6 +211,27 @@
   }
   \par\vspace{0.3\baselineskip}
 }
+
+\DeclareBibliographyDriver{book}{%
+  \printfield{title}%
+  \newblock%
+  \printnames{author}%
+  \par%
+  \newblock%
+  {%
+    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \printlist{publisher}%
+    \setunit*{\addcomma\space}%
+    \printfield{note}%
+    \setunit*{\addcomma\space}%
+    \printfield{year}%
+    \setunit{\addcomma\space}%
+    \printlist{location}%
+    \newunit%
+  }
+  \par\vspace{0.3\baselineskip}
+}
+
 
 \DeclareBibliographyDriver{inproceedings}{%
   \printfield{title}%
@@ -258,7 +292,7 @@
 \DeclareNameFormat{author}{%
   \small\addfontfeature{Color=lightgray}%
   \ifblank{#3}{}{#3\space}#1%
-  \ifthenelse{\value{listcount}<\value{liststop}}
+  \ifthenelse {\value{listcount}<\value{liststop}}
     {\addcomma\space}
     {}%
 }
