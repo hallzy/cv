@@ -8,10 +8,7 @@ print my publications and textpos for the aside.
 
 # Build
 
-Build the pdf by just running `make`. There is usually an error that gets thrown
-at the end but the build finishes anyways, so before assuming something went
-wrong, just check the pdf.
-
+Build the pdf by just running `make`.
 
 # License
 
