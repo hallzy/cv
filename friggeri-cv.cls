@@ -131,6 +131,17 @@
   \par\vspace{.25\parskip}%
 }
 
+% Command for keywords. The two commented lines are there for debugging. It
+% will display the keywords so that I can see them.
+\newcommand{\keyword}[1]{
+  \par\vspace{.5\parskip}%
+  \fontsize{0.1pt}{0pt}\selectfont%
+  \thinfont\color{white} #1%
+  %\fontsize{10pt}{0pt}\selectfont%
+  %\thinfont\color{red} #1%
+  \par\vspace{.25\parskip}%
+}
+
 \pagestyle{empty}
 
 
@@ -179,136 +190,6 @@
   \end{textblock}
   \let\section\oldsection
 }
-
-%%%%%%%%%%%%%%%%
-% Bibliography %
-%%%%%%%%%%%%%%%%
-
-\RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
-
-\DeclareFieldFormat[article]{title}{#1\par}
-\DeclareFieldFormat[book]{title}{#1\par}
-\DeclareFieldFormat[inproceedings]{title}{#1\par}
-\DeclareFieldFormat[misc]{title}{#1\par}
-\DeclareFieldFormat[report]{title}{#1\par}
-
-\DeclareBibliographyDriver{article}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
-    \usebibmacro{journal+issuetitle}%
-    \setunit{\space}%
-    \printfield{pages}%
-    \newunit%
-    \printlist{publisher}%
-    \setunit*{\addcomma\space}%
-    \printfield{year}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
-}
-
-\DeclareBibliographyDriver{book}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
-    \printlist{publisher}%
-    \setunit*{\addcomma\space}%
-    \printfield{note}%
-    \setunit*{\addcomma\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
-    \printlist{location}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
-}
-
-
-\DeclareBibliographyDriver{inproceedings}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \footnotesize\addfontfeature{Color=lightgray}%
-    \printfield{booktitle}%
-    \setunit{\addcomma\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
-    \printlist{location}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
-}
-
-\DeclareBibliographyDriver{misc}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
-    \printfield{booktitle}%
-    \setunit*{\addcomma\space}%
-    \printfield{note}%
-    \setunit*{\addcomma\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
-    \printlist{location}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
-}
-
-\DeclareBibliographyDriver{report}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
-    \printfield{type}%
-    \setunit{\space}%
-    \printfield{number}%
-    \setunit{\addcomma\space}%
-    \printfield{year}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
-}
-
-\DeclareNameFormat{author}{%
-  \small\addfontfeature{Color=lightgray}%
-  \ifblank{#3}{}{#3\space}#1%
-  \ifthenelse {\value{listcount}<\value{liststop}}
-    {\addcomma\space}
-    {}%
-}
-
-\newcommand{\printbibsection}[2]{
-  \begin{refsection}
-    \nocite{*}
-    \printbibliography[sorting=chronological, type={#1}, title={#2}, heading=subbibliography]
-  \end{refsection}
-}
-
-\DeclareSortingScheme{chronological}{
-  \sort[direction=descending]{\field{year}}
-  \sort[direction=descending]{\field{month}}
-}
-
 
 
 %%%%%%%%%%%%%%%%
