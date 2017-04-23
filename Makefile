@@ -1,8 +1,9 @@
-all: resume.tex
+all: resume.tex resume_non_technical.tex
 	xelatex resume
+	xelatex resume_non_technical
 
 clean:
-	rm -rf resume.run.xml resume.aux resume.out resume.log resume-blx.bib resume.bcf
+	rm -rf *.xml *.aux *.out *.log *.bib *.bcf
 
 cleanall:
-	rm -rf resume.run.xml resume.aux resume.out resume.pdf resume.log resume-blx.bib resume.bcf
+	rm -rf *.xml *.aux *.out *.log *.bib *.bcf *.pdf
