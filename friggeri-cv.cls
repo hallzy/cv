@@ -18,14 +18,15 @@
 \definecolor{white}{RGB}{255,255,255}
 
 \definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{4D4D4D}
-\definecolor{lightgray}{HTML}{999999}
+\definecolor{gray}{HTML}{444444}
+\definecolor{lightgray}{HTML}{4D4D4D}
 
-\definecolor{green}{HTML}{C2E15F}
-\definecolor{orange}{HTML}{FDA333}
-\definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{FB4485}
-\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{green}{HTML}{9EBD3A}
+\definecolor{orange}{HTML}{E6942E}
+\definecolor{purple}{HTML}{A85FE3}
+\definecolor{red}{HTML}{E51760}
+\definecolor{blue}{HTML}{00A8C0}
+\definecolor{brown}{HTML}{AD671F}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
