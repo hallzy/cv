@@ -17,9 +17,9 @@
 
 \definecolor{white}{RGB}{255,255,255}
 
-\definecolor{darkgray}{HTML}{333333}
+\definecolor{black}{HTML}{000000}
 \definecolor{gray}{HTML}{444444}
-\definecolor{lightgray}{HTML}{4D4D4D}
+\definecolor{lightgray}{HTML}{888888}
 
 \definecolor{green}{HTML}{9EBD3A}
 \definecolor{orange}{HTML}{E6942E}
@@ -41,7 +41,7 @@
   \colorlet{fillheader}{gray}
   \colorlet{header}{white}
 \fi
-\colorlet{textcolor}{gray}
+\colorlet{textcolor}{black}
 \colorlet{headercolor}{gray}
 
 %%%%%%%%%
@@ -56,7 +56,8 @@
 \newfontfamily\headingfont[]{Source Sans Pro Bold}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Source Sans Pro Light}
+\setmainfont[Mapping=tex-text, Color=textcolor, SizeFeatures={Size=10}]{Source Sans Pro Light}
+
 
 %\setmathfont{XITS Math}
 
@@ -120,7 +121,7 @@
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {%
-    \LARGE\headingfont\color{headercolor}%
+    \LARGE\headingfont\color{black}%
     \@sectioncolor #1%
   }
   \par\vspace{\parskip}
@@ -160,13 +161,35 @@
 }{%
   \end{longtabu}
 }
-\renewcommand{\bfseries}{\headingfont\color{headercolor}}
-\newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.8cm}{%
-    \textbf{#2}%
+\renewcommand{\bfseries}{\headingfont\color{headingcolor}}
+\newcommand{\entryFirstPage}[3]{%
+  \parbox[t]{14cm}{%
+    \fontsize{10pt}{10pt}
+    \textbf{\color{black}#2}%
     \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    #4\vspace{\parsep}%
+    {\addfontfeature{Color=lightgray}\textit{#1}}%
+%    {\footnotesize\addfontfeature{Color=gray} #3}%
+    #3%
+    \vspace{\parsep}%
+  }\\}
+
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\entry}[3]{%
+  \parbox[t]{18.6cm}{%
+    \fontsize{10pt}{10pt}
+    \textbf{\color{black}#2}%
+    \hfill%
+    {\addfontfeature{Color=lightgray}\textit{#1}}%
+%    {\footnotesize\addfontfeature{Color=gray} #3}%
+    #3%
+    \vspace{\parsep}%
+  }\\}
+
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\interest}[1]{%
+  \parbox[t]{18.6cm}{%
+    #1%
+    \vspace{\parsep}%
   }\\}
 
 
@@ -180,7 +203,7 @@
 \newenvironment{aside}{%
   \let\oldsection\section
   \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+    \par\vspace{\baselineskip}{\Large\headingfont\color{black} ##1}
   }
   \begin{textblock}{3.6}(1.5, 4.33)
   \begin{flushright}
@@ -197,5 +220,5 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=1.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
