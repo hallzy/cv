@@ -1,0 +1,577 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.0 (5/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+\usepackage{xcolor}
+\usepackage[none]{hyphenat}
+\usepackage{changepage}
+
+
+\begin{document}
+
+\header{Steven}{Hall}{Software Engineer} % Your name and current job title/field
+
+%-------------------------------------------------------------------------------
+%  SIDEBAR SECTION
+%-------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{Contact}
+\href{mailto:steven@stmhall.ca}{steven@stmhall.ca}
+\href{http://github.com/hallzy}{GitHub: hallzy}
+\href{https://www.linkedin.com/in/steventmhall}{LinkedIn: steventmhall}
+\section{Languages}
+Bash Script
+C/ C++
+HTML/ CSS
+Java
+JavaScript/ AJAX/ JQuery
+TypeScript
+MySQL/ PostgreSQL
+PHP
+Python
+VimScript
+\section{Computers and Programs}
+Git/ SVN
+Linux (CLI proficient)
+Vim
+\end{aside}
+
+%-------------------------------------------------------------------------------
+% Work Experience
+%-------------------------------------------------------------------------------
+\section{Work Experience}
+
+\begin{entrylistSkinny}
+
+\entrySkinny
+{April 2018--May 2020}
+{LinuxMagic Inc. {\normalfont Full Stack Web Developer}}
+% {Vancouver, BC}
+{
+\begin{itemize}
+\item Worked on feature enhancements, customer requests, and bug fixes for
+MagicMail, a carrier grade email platform for ISPs and Telcos using a
+proprietary PHP MVC, PostgeSQL, Bootstrap, and JQuery.
+\item Worked on feature enhancements and bug fixes for other systems including
+the  CRM, sales system, and other product websites (MagicSpam, SpamRats) using
+CakePHP, MySQL and PostgreSQL, JQuery, Bootstrap, and a proprietary PHP MVC.
+\item Migrated the sales system database from an Oracle to PostgreSQL
+\item Led a project to redesign and rewrite the SpamRATS product website from
+the ground up using a proprietary PHP MVC, Bootstrap, JQuery, and
+PostgreSQL.
+\item Completed work orders for customers by communicating directly with the
+customer and performing their development work in a timely and professional
+manner using a proprietary PHP MVC, JQuery, and MySQL
+\item Mentored new Web Developer hires.
+\item {\bf Skills}: Proprietary PHP MVC Framework, CakePHP, CSS, JavaScript,
+ JQuery, Bootstrap, MySQL, PostgreSQL, Bash, SVN, HTML\\
+\end{itemize}
+}
+\entrySkinny
+{May 2016--Aug 2016}
+{UBC {\normalfont Big Data Research Assistant}}
+% {Vancouver, BC}
+{
+\begin{itemize}
+  \item Goal: To share memory (RDDs) across Apache Spark instances through a
+  unified memory manager.
+  \item {\bf Skills}: Scala, Python, Hadoop, Apache Spark, Git, Bash\\
+\end{itemize}
+}
+\entrySkinny
+{Jan 2015--Aug 2015}
+{Ericsson Canada Inc {\normalfont Software Developer Intern}}
+% {Burnaby, BC}
+{
+\begin{itemize}
+  \item Tested and developed QoS and PBR software solutions on a variety of
+    Ericsson's enterprise scale routing platforms using manual router
+    configurations and Perl scripts for testing.
+  \item Presented demos showing the functionality and progress of policy-based
+  routing during the testing and development phases.
+  \item {\bf Skills}: C, Perl, Git, CVS, Bash
+\end{itemize}
+}
+% \entrySkinny
+% {Summer 2014}
+% {ByteCom Computer Services {\normalfont Computer Repair Technician}}
+% % {Surrey, BC}
+% {
+% \begin{itemize}
+% \item Repaired broken, slow, and non-responsive computers in a computer repair
+% shop by replicating the customer’s problem, identifying the cause of the
+% problem, and repairing the problem with the tools we had, resulting in satisfied
+% customers.
+% \item Techniques used to repair the computers include file and registry
+% manipulations, and taking the computers apart to diagnose hardware problems,
+% resulting in faster, and better working computers.
+% \end{itemize}
+% }
+\end{entrylistSkinny}
+
+%-------------------------------------------------------------------------------
+%  Technical Projects
+%-------------------------------------------------------------------------------
+\begin{entrylist}
+
+\section{Technical Projects}
+
+\entry
+{Aug 2020}
+{NES Tetris Web Clone}
+% {}
+{
+\begin{itemize}
+\item Goal: To make a web based Tetris game that mimics the behaviour and rules
+of the classic NES Tetris game as closely as possible, with the ability to send
+a unique URL to a friend so that they are able to play the same sequence of
+pieces so you can compare your scores. The scores would be listed on the page
+for that game.
+\item Currently the game is in development. The game itself is playable but
+there are some bugs and issues I plan to address, and scores for the game are
+not saved or listed on the page. I plan to solve this by saving scores to a
+database, and using PHP to generate the game page with the scores listed.
+\item {\bf Skills}: TypeScript, PHP, PostgreSQL, HTML, CSS\\
+\end{itemize}
+}
+\entry
+{May 2020}
+{TV Show Notification and Calendar}
+% {}
+{
+\begin{itemize}
+\item Created a Google App Script that retrieves air dates for episodes of TV
+Shows that I watch. The script uses that information to figure out what episodes
+I don't have in my Google Calendar already and will automatically add them for
+me.
+\item {\bf Skills}: Google App Script, TypeScript\\
+\end{itemize}
+}
+\entry
+{Nov 2017}
+{Online Web Store}
+% {}
+{
+\begin{itemize}
+\item Built a web application that mimics an online store using AJAX requests
+and MongoDB.
+\item Resulted in a functioning webpage that received a high grade.
+\item {\bf Skills}: JavaScript, HTML, CSS, MongoDB\\
+\end{itemize}
+}
+\entry
+{April 2014}
+{Electromagnetically Tethered Robot}
+% {}
+{
+\begin{itemize}
+\item Programmed a custom built autonomous robot to follow an electromagnetic
+signal. I also programmed the custom built remote that created this EM signal.
+\item The remote could also send binary data through the magnetic field to tell
+the robot to perform certain manoeuvres such as spin 180 degrees, move back and
+forth, and parallel park.
+\item Resulted in a fully functioning robot and a high project grade.
+\item {\bf Skills}: C (Embedded)\\
+\end{itemize}
+}
+\end{entrylist}
+
+% \newpage
+% \newgeometry{top=1.5cm,bottom=1.5cm,right=1.5cm,left=1.5cm}
+
+%-------------------------------------------------------------------------------
+%  Other Work Experience
+%-------------------------------------------------------------------------------
+% \section{Other Work Experience}
+
+% \begin{entrylistSkinny}
+
+
+% \end{entrylistSkinny}
+
+%-------------------------------------------------------------------------------
+%  Volunteer Experience
+%-------------------------------------------------------------------------------
+% \section{Volunteer Experience}
+
+% \begin{entrylistSkinny}
+
+% \entry
+% {2010--2013}
+% {North Delta Baseball Association and Surrey Canadian Baseball Association {\normalfont Assistant Coach}}
+% % {North Delta, BC and Surrey, BC}
+% {
+% \begin{itemize}
+% \item Coached range of age groups over a three season period.
+% \item Duties include teaching proper throwing and hitting mechanics, resulting
+%   in increased performance by every player.
+% \end{itemize}
+% }
+% \end{entrylistSkinny}
+
+%-------------------------------------------------------------------------------
+%  EDUCATION SECTION
+%-------------------------------------------------------------------------------
+\begin{entrylist}
+
+\section{Education}
+
+%------------------------------------------------
+\entry
+{2013--Dec 2017}
+{University of British Columbia {\normalfont Vancouver, BC}}
+% {Vancouver, BC}
+{\\Bachelor of Applied Science in Computer Engineering (Software Option)}
+%------------------------------------------------
+\entry
+{2012--2013}
+  {Kwantlen Polytechnic University {\normalfont Surrey, BC}} % {\normalfont of IT}}
+% {Surrey, BC}
+{\\Engineering Certificate}
+\end{entrylist}
+
+% \newpage
+
+%-------------------------------------------------------------------------------
+%  AWARDS SECTION
+%-------------------------------------------------------------------------------
+
+%\section{Awards}
+
+%\begin{entrylistSkinny}
+%%------------------------------------------------
+%\entry
+%{2012}
+%{Coaching Staff of the Year (Highest voted coaching staff in the league)}
+%{}
+%{Surrey Canadian Baseball Association}
+%%------------------------------------------------
+%\end{entrylistSkinny}
+
+%-------------------------------------------------------------------------------
+%  INTERESTS SECTION
+%-------------------------------------------------------------------------------
+\begin{entrylist}
+
+\section{Interests and Activities}
+
+\interest
+{
+\begin{itemize}
+\item Programming and computers
+\item I love to learn and figure out how things work
+\item Contributing to open source projects such as:
+  \begin{itemize}
+    \item Gravity programming language
+    \item Git Radar
+    \item Various Vim plugins
+  \end{itemize}
+\item Suckless Software - I use a lot of Suckless software on my personal
+ computer including:
+  \begin{itemize}
+    \item DWM
+    \item dmenu
+    \item sent
+    \item st
+    \item sxiv
+  \end{itemize}
+\item Encryption
+\item Computer and information security
+\item Network security including router configuration and VPNs.
+\item Configuring my Vim text editor so that it now has over 175,000 lines of
+additional configuration code and plugins which increases my productivity when
+coding and editing text.
+\item I perform all of my own car repairs and maintenance including:
+\item Skiing, Snowboarding
+\item Baseball, Hockey, Lacrosse
+\end{itemize}
+}
+\end{entrylist}
+
+% % Software Specific
+% \keyword
+% {
+% Agile
+% Applications
+% ASP.NET
+% Build
+% C\#
+% Code
+% Collaborate
+% Data
+% Design
+% Development
+% Engineering
+% Environment
+% Java
+% JavaScript
+% Knowledge
+% Mobile
+% .NET
+% Product
+% Projects
+% Software
+% Solutions
+% SQL
+% Team
+% Technologies
+% Testing
+% Tools
+% Web
+% % General
+% accommodated
+% accomplished
+% achieved
+% acquainted
+% activated
+% active
+% adaptable
+% adapted
+% administered
+% teamwork
+% review
+% advertised
+% advised
+% advocated
+% aggressive
+% aided
+% alert
+% altered
+% ambitious
+% analytical
+% analyzed
+% applied
+% appraised
+% approved
+% arranged
+% assembled
+% eager
+% excited
+% exciting
+% assigned
+% assisted
+% assumed
+% attached
+% attained
+% attentive
+% augmented
+% authorized
+% balanced
+% bought
+% broad-minded
+% budgeted
+% built
+% chaired
+% classified
+% collected
+% combined
+% commanded
+% communicated
+% completed
+% condensed
+% conducted
+% conferred
+% conscientious
+% consistent
+% consolidated
+% constructive
+% consulted
+% controlled
+% converted
+% coordinated
+% counselled
+% created
+% creative
+% curtained
+% delivered
+% demonstrated
+% dependable
+% designated
+% designed
+% determined
+% developed
+% devised
+% diagnosed
+% diplomatic
+% directed
+% disciplined
+% disclosed
+% discontinued
+% discovered
+% discrete
+% dispatched
+% displayed
+% drafted
+% economical
+% economized
+% edited
+% educated
+% efficient
+% eliminated
+% employed
+% encouraged
+% endorsed
+% energetic
+% enterprising
+% enthusiastic
+% established
+% estimated
+% evaluated
+% examined
+% exchanged
+% executed
+% exhibited
+% expanded
+% expedited
+% extended
+% extroverted
+% facilitated
+% fair
+% familiarized
+% forceful
+% formulated
+% founded
+% fun
+% funny
+% governed
+% grouped
+% guaranteed
+% guided
+% handled
+% hard working
+% hard-working
+% headed
+% hired
+% humor
+% humorous
+% humour
+% humourous
+% illustrated
+% imaginative
+% implemented
+% improved
+% increased
+% independent
+% influenced
+% informed
+% initiated
+% innovated
+% installed
+% instituted
+% instructed
+% interpreted
+% introduced
+% inventoried
+% invested
+% investigated
+% lectured
+% logical
+% loyal
+% maintained
+% managed
+% mapped
+% mature
+% maximized
+% measured
+% merged
+% methodical
+% minimized
+% modernized
+% modified
+% motivated
+% negotiated
+% notified
+% objective
+% observed
+% obtained
+% operated
+% optimistic
+% organized
+% perceptive
+% perfected
+% personable
+% planned
+% pleasant
+% positive
+% practical
+% prepared
+% prescribed
+% procured
+% produced
+% productive
+% projected
+% promoted
+% publicized
+% published
+% realistic
+% recommended
+% rectified
+% reduced
+% regulated
+% reliable
+% relocated
+% removed
+% reorganized
+% repaired
+% replaced
+% reported
+% resolved
+% resourceful
+% respective
+% restored
+% revised
+% scheduled
+% self-reliant
+% sense of humor
+% sense of humour
+% serviced
+% simplified
+% sincere
+% solved
+% sophisticated
+% sponsored
+% stabilized
+% strengthened
+% studied
+% suggested
+% supervised
+% supplemented
+% surpassed
+% systematic
+% tactful
+% talented
+% taught
+% terminated
+% transferred
+% transformed
+% travel
+% unified
+% updated
+% utilized
+% verified
+% vetoed
+% will
+% }
+
+\newpage
+
+\end{document}

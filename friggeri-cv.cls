@@ -154,15 +154,21 @@
 \RequirePackage{longtable}
 \RequirePackage{tabu}
 
-
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{%
+  \begin{adjustwidth}{-4.6cm}{0cm}
+}{%
+  \end{adjustwidth}
+}
+
+\setlength{\tabcolsep}{0pt}
+\newenvironment{entrylistSkinny}{%
   \begin{longtabu} to \textwidth {@{\extracolsep{\fill}}ll}
 }{%
   \end{longtabu}
 }
-\renewcommand{\bfseries}{\headingfont\color{headingcolor}}
-\newcommand{\entryFirstPage}[3]{%
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\entrySkinny}[3]{%
   \parbox[t]{14cm}{%
     \fontsize{10pt}{10pt}
     \textbf{\color{black}#2}%
@@ -206,11 +212,11 @@
     \par\vspace{\baselineskip}{\Large\headingfont\color{black} ##1}
   }
   \begin{textblock}{3.6}(1.5, 4.33)
-  \begin{flushright}
+  \begin{flushleft}
   \obeycr
 }{%
   \restorecr
-  \end{flushright}
+  \end{flushleft}
   \end{textblock}
   \let\section\oldsection
 }
